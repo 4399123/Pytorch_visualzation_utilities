@@ -16,3 +16,6 @@ def show(imgs):
         axs[0,i].imshow(np.array(img))
         axs[0, i].set(xticklabels=[], yticklabels=[], xticks=[], yticks=[])
     plt.show()
+
+def PIL_show():
+    pass
