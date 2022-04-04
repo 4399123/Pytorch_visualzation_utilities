@@ -17,5 +17,17 @@ def show(imgs):
         axs[0, i].set(xticklabels=[], yticklabels=[], xticks=[], yticks=[])
     plt.show()
 
-def PIL_show():
-    pass
+def PIL_show(imgs):
+    num=len(imgs)
+    ncols=2
+    nrows=num//2
+    if nrows==0:
+        nrows=1
+    _, axs = plt.subplots(nrows=nrows,ncols=ncols, squeeze=False)
+    n=0
+    for nrow in range(nrows):
+        for ncol in range(ncols):
+            axs[nrow, ncol].imshow(imgs[n])
+            n+=1
+    plt.savefig('result.png',dpi=800)
+    plt.show()
